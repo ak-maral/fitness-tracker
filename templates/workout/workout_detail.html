@@ -14,7 +14,14 @@
         Your browser does not support the video tag.
     </video>
     <br>
-    <!-- Add update and delete buttons here -->
+    <form method="post" action="{% url 'edit_workout' workout.id %}">
+        {% csrf_token %}
+        <button type="submit">Update Workout</button>
+    </form>
+    <form method="post" action="{% url 'delete_workout' workout.id %}">
+        {% csrf_token %}
+        <button type="submit">Delete Workout</button>
+    </form>
 </body>
 </html>
 

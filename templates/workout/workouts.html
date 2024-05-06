@@ -16,7 +16,14 @@
                 {% for workout in workouts %}
                 <li>
                     <a href="{% url 'workout_detail' workout.id %}">{{ workout.name }}</a>
-                    <!-- Add more details about the workout as needed -->
+                    <form method="post" action="{% url 'edit_workout' workout.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Update</button>
+                    </form>
+                    <form method="post" action="{% url 'delete_workout' workout.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
                 </li>
                 {% empty %}
                 <li>No workouts found.</li>

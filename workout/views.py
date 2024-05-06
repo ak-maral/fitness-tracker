@@ -27,13 +27,15 @@ def create_workout(request):
 
 def edit_workout(request, workout_id):
     workout = get_object_or_404(Workout, pk=workout_id)
+    
     if request.method == 'POST':
-        form = CreateWorkoutForm(request.POST, instance=workout)
+        form = CreateWorkoutForm(request.POST, request.FILES, instance=workout)
         if form.is_valid():
             form.save()
             return redirect('workout_detail', workout_id=workout.id)
     else:
         form = CreateWorkoutForm(instance=workout)
+    
     return render(request, 'workout/edit_workout.html', {'form': form})
 
 def delete_workout(request, workout_id):
