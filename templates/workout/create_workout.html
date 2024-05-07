@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Workout</title>
+</head>
+<body>
+    <header>
+        <h1>Create New Workout</h1>
+    </header>
+    <main>
+        <section>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="description">Description:</label><br>
+                <textarea id="description" name="description" required></textarea><br><br>
+                <label for="video">Video File:</label><br>
+                <input type="file" id="video" name="video" accept="video/*" required><br><br>
+                <label for="type">Type:</label><br>
+                <select id="type" name="type" required>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                </select><br><br>
+                <label for="image">Image:</label><br>
+                <input type="file" id="image" name="image" accept="image/*" required><br><br>
+                <button type="submit">Create Workout</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Fitness Tracker</p>
+    </footer>
+</body>
+</html>

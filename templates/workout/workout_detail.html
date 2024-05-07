@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Details</title>
+</head>
+<body>
+    <h1>{{ workout.name }}</h1>
+    <p>Description: {{ workout.description }}</p>
+    <p>Type: {{ workout.type }}</p>
+    <video width="320" height="240" controls>
+        <source src="{{ workout.video_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <form method="post" action="{% url 'edit_workout' workout.id %}">
+        {% csrf_token %}
+        <button type="submit">Update Workout</button>
+    </form>
+    <form method="post" action="{% url 'delete_workout' workout.id %}">
+        {% csrf_token %}
+        <button type="submit">Delete Workout</button>
+    </form>
+</body>
+</html>
+

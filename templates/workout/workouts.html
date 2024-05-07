@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Workouts</title>
+</head>
+<body>
+    <header>
+        <h1>All Workouts</h1>
+    </header>
+    <main>
+        <section>
+            <h2>List of Workouts</h2>
+            <ul>
+                {% for workout in workouts %}
+                <li>
+                    <a href="{% url 'workout_detail' workout.id %}">{{ workout.name }}</a>
+                    <form method="post" action="{% url 'edit_workout' workout.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Update</button>
+                    </form>
+                    <form method="post" action="{% url 'delete_workout' workout.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+                {% empty %}
+                <li>No workouts found.</li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Fitness Tracker</p>
+    </footer>
+</body>
+</html>
+
