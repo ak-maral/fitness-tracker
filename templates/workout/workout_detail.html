@@ -13,11 +13,8 @@
         <source src="{{ workout.video_file.url }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <br>
-    <form method="post" action="{% url 'edit_workout' workout.id %}">
-        {% csrf_token %}
-        <button type="submit">Update Workout</button>
-    </form>
+    <br/>
+    <a href="{% url 'edit_workout' workout.id %}"><button type="submit">Update Workout</button></a>
     <form method="post" action="{% url 'delete_workout' workout.id %}">
         {% csrf_token %}
         <button type="submit">Delete Workout</button>

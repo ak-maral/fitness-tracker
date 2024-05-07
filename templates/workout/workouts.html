@@ -16,10 +16,7 @@
                 {% for workout in workouts %}
                 <li>
                     <a href="{% url 'workout_detail' workout.id %}">{{ workout.name }}</a>
-                    <form method="post" action="{% url 'edit_workout' workout.id %}">
-                        {% csrf_token %}
-                        <button type="submit">Update</button>
-                    </form>
+                    <a href="{% url 'edit_workout' workout.id %}"><button type="submit">Update Workout</button></a>
                     <form method="post" action="{% url 'delete_workout' workout.id %}">
                         {% csrf_token %}
                         <button type="submit">Delete</button>

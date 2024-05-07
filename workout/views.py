@@ -27,7 +27,7 @@ def create_workout(request):
 
 def edit_workout(request, workout_id):
     workout = get_object_or_404(Workout, pk=workout_id)
-    
+    print(request.method)
     if request.method == 'POST':
         form = CreateWorkoutForm(request.POST, request.FILES, instance=workout)
         if form.is_valid():
