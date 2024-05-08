@@ -4,12 +4,9 @@ from .views import UserModelViewSet
 
 router = routers.DefaultRouter()
 
-router.register(
-    "users", viewset=UserModelViewSet, basename="users"
-)
-
-urlpatterns= [
-
+urlpatterns = [
+    path("user/", UserModelViewSet.as_view({'get': 'list', 'post': 'create'}), name="user"),
+    path("user/<int:pk>/", UserModelViewSet.as_view({'get': 'retrieve', 'delete': 'destroy'}), name="user")
 ]
 
 urlpatterns += router.urls

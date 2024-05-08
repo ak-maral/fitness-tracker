@@ -6,7 +6,8 @@ class User(models.Model):
     email = models.EmailField()
     phonenumber = models.CharField(max_length=10)
     age = models.IntegerField(null=True, blank=True)  
-    weight = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True) 
+    weight = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    # workout = models.ForeignKey()
 
     def __str__(self):
         return self.username
