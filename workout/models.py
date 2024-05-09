@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from trainers.models import Trainer
 
 class Workout(models.Model):
@@ -17,6 +18,8 @@ class Workout(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     duration = models.FloatField(default=0)  # Duration of the video in seconds
     trainer = models.ForeignKey(to = Trainer, on_delete=models.SET_NULL, null=True, related_name="trainer")
+    created_at = models.DateTimeField(default=timezone.now()),
+    updated_at = models.DateTimeField(default=timezone.now())
 
     def __str__(self):
         return self.name
