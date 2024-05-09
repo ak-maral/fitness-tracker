@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'drf_yasg' ,
     'users',
+    'trainers',
     'workout',
     'activities'
 ]
