@@ -61,6 +61,9 @@ python manage.py runserver
 
 The API documentation is available at [http://localhost:8000/docs/](http://localhost:8000/docs/), powered by Swagger UI. Here, you can explore the available endpoints and interact with the API.
 
+## Technical Requirements
+For a detailed list of technical requirements, refer to the [Technical Requirements Document](https://docs.google.com/document/d/186CrwjGhxILgq0Uh4SNCXqnJ1ICTPSuxV93aOzs7uLQ/edit?usp=sharing).
+
 ## Contributing
 
 Contributions to this project are welcome! Feel free to open issues for bug reports or feature requests, and submit pull requests with enhancements or fixes.
