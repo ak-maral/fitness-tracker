@@ -60,7 +60,8 @@ python manage.py runserver
 ## API Documentation
 
 The API documentation is available at [http://localhost:8000/docs/](http://localhost:8000/docs/), powered by Swagger UI. Here, you can explore the available endpoints and interact with the API.
-
+## Design
+For a detailed overview of UI requirements, refer to the [Figma](https://www.figma.com/design/n1Tcvuim018CEobp90AQUZ/Fitness-application?node-id=0%3A1&t=YmOsxaCwmuNtTsyw-1).
 ## Technical Requirements
 For a detailed list of technical requirements, refer to the [Technical Requirements Document](https://docs.google.com/document/d/186CrwjGhxILgq0Uh4SNCXqnJ1ICTPSuxV93aOzs7uLQ/edit?usp=sharing).
 
