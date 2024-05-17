@@ -1,16 +1,26 @@
 from django.shortcuts import render
 from .models import Workout
-from .serializers import WorkoutSerializers
-from rest_framework import viewsets
+from .serializers import WorkoutSerializers,WorkoutCreateSerializers
+from rest_framework import generics
 from rest_framework import permissions
 
-class WorkoutViewSet(viewsets.ModelViewSet):
+class WorkoutListViewSet(generics.ListAPIView):
     queryset = Workout.objects.all()
     serializer_class = WorkoutSerializers
-    
+
     def get_permissions(self):
-        if self.action in ['create', 'update', 'partial_update', 'destroy']:
-            permission_classes = [permissions.IsAuthenticated]
-        else:
-            permission_classes = [permissions.AllowAny]
-        return [permission() for permission in permission_classes]
+        return [permissions.AllowAny()]
+
+class WorkoutCreateViewSet(generics.GenericAPIView):
+    queryset = Workout.objects.all()
+    serializer_class = WorkoutCreateSerializers
+
+    def get_permissions(self):
+        return [permissions.IsAdminUser()]
+    
+class WorkoutDetailViewSet(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Workout.objects.all()
+    serializer_class = WorkoutSerializers
+
+    def get_permissions(self):
+        return [permissions.IsAdminUser()]
