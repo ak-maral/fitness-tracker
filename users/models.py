@@ -37,7 +37,7 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=50, blank=True)
     last_name = models.CharField(max_length=50, blank=True)
     bio = models.TextField(blank=True) 
-    profile_picture = models.ImageField(upload_to='media/', default='default.png')
+    profile_picture = models.ImageField(upload_to='media/', default='default.jpg')
     certification = models.CharField(max_length=50, blank=True) 
     specialization = models.CharField(max_length=50, blank=True) 
 

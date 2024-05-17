@@ -18,8 +18,8 @@ class Workout(models.Model):
     image = models.ImageField(upload_to='images/', null=True, blank=True)
     duration = models.FloatField(default=0)  # Duration of the video in seconds
     user = models.ForeignKey(to = User, on_delete=models.SET_NULL, null=True, related_name="trainer")
-    created_at = models.DateTimeField(default=timezone.now()),
-    updated_at = models.DateTimeField(default=timezone.now())
+    created_at = models.DateTimeField(auto_now_add=True),
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name

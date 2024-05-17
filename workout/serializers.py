@@ -4,4 +4,4 @@ from .models import Workout
 class WorkoutSerializers(serializers.ModelSerializer):
     class Meta:
         model = Workout
-        fields = ('__all__')
+        fields = '__all__'
