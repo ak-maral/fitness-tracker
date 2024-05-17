@@ -64,6 +64,8 @@ The API documentation is available at [http://localhost:8000/docs/](http://local
 ## Technical Requirements
 For a detailed list of technical requirements, refer to the [Technical Requirements Document](https://docs.google.com/document/d/186CrwjGhxILgq0Uh4SNCXqnJ1ICTPSuxV93aOzs7uLQ/edit?usp=sharing).
 
+## Feedback
+Here is feedback for project from a teacher [https://docs.google.com/document/d/1BkWzPiYgw3qhbILh4_sgfgHhnAJIKsSVjeIN7Ygqg8c/edit?usp=sharing](https://docs.google.com/document/d/1BkWzPiYgw3qhbILh4_sgfgHhnAJIKsSVjeIN7Ygqg8c/edit?usp=sharing)
 ## Contributing
 
 Contributions to this project are welcome! Feel free to open issues for bug reports or feature requests, and submit pull requests with enhancements or fixes.
