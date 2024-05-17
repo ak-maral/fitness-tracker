@@ -10,7 +10,6 @@ The project is structured as follows:
 
 - **`admin/`**: Django admin configuration.
 - **`users/`**: App for user authentication and profile management.
-- **`trainers/`**: App for managing fitness trainers.
 - **`workout/`**: App for creating and managing workout routines.
 - **`activities/`**: App for recording and tracking fitness activities.
 - **`docs/`**: API documentation using Swagger UI.
